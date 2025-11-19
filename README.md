@@ -13,6 +13,8 @@ Uma landing page moderna, rápida e responsiva para apresentar o “Diagnóstico
 - Personalização Rápida
 - Publicação no HostGator (cPanel)
 - Dicas de SEO e Performance
+- GitHub Pages
+- Changelog
 - Créditos e Licença
 
 ## Visão Geral
@@ -73,6 +75,23 @@ Dica: se publicar numa subpasta (ex.: `public_html/diagnostico`), a URL será `s
 - Alt text: todas as imagens possuem `alt` — mantenha descritivo.
 - Tamanho das imagens: troque por versões otimizadas (WebP/PNG comprimido) quando possível.
 - Cache: ative cache no seu host (ou via .htaccess) para `css`/`img`.
+
+## GitHub Pages
+
+Site publicado como GitHub Pages:
+
+- URL: https://luizrmsilva1973.github.io/projetorockettail/
+
+Como funciona
+- O repositório possui um workflow pronto em `.github/workflows/gh-pages.yml` que publica o conteúdo do repositório no branch `gh-pages` usando GitHub Actions.
+- Caso ainda não esteja visível, ative em Settings → Pages → Build and deployment → Source: GitHub Actions.
+
+Deploy manual (alternativa)
+- Você também pode publicar criando o branch `gh-pages` com os mesmos arquivos da raíz. O GitHub geralmente ativa automaticamente, mas é possível ajustar a origem em Settings → Pages.
+
+## Changelog
+
+- 2025-11-19: primeira versão pública, com layout responsivo, imagens 6–12 incluídas, correções visuais (bege nos cards, seções, cores) e README.
 
 ## Créditos e Licença
 
