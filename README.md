@@ -1,5 +1,8 @@
 # Rocket Tail — Diagnóstico de Propulsão (Landing Page)
 
+[![Deploy to GitHub Pages](https://github.com/LuizRMSilva1973/projetorockettail/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/LuizRMSilva1973/projetorockettail/actions/workflows/gh-pages.yml)
+[![Site](https://img.shields.io/badge/Site-GitHub%20Pages-2ea44f)](https://luizrmsilva1973.github.io/projetorockettail/)
+
 Uma landing page moderna, rápida e responsiva para apresentar o “Diagnóstico de Propulsão” da Rocket Tail — Performance para negócios Pet. O projeto foi construído em HTML/CSS puro, focado em alta compatibilidade, carregamento leve e facilidade de publicação em hospedagens compartilhadas (como HostGator/cPanel).
 
 ![Hero](img/imagem12.png)
