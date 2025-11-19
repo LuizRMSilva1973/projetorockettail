@@ -103,5 +103,3 @@ Deploy manual (alternativa)
 - Licença: uso interno do projeto (sem licença open‑source automática). Ajuste conforme necessidade.
 
 ---
-
-Se precisar, posso ajustar cores/tipografia/spacing para bater 100% com um novo mock, ou preparar um build com minificação das folhas de estilo.
