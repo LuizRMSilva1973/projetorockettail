@@ -282,6 +282,14 @@ body {
     height: 100%;
     object-fit: contain;
     display: block;
+    /* Aproxima o contorno laranja do desenho do ícone
+       aumentando levemente o PNG dentro do círculo */
+    transform: scale(1.08);
+    transform-origin: center center;
+    /* Corta 3px do anel externo para evitar artefatos
+       (remove qualquer pontinho fora do círculo colorido) */
+    -webkit-mask-image: radial-gradient(circle, #000 calc(50% - 3px), transparent calc(50% - 3px));
+    mask-image: radial-gradient(circle, #000 calc(50% - 3px), transparent calc(50% - 3px));
 }
 
 /* classes de cor não precisam mais de background */
