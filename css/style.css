@@ -16,6 +16,12 @@ body {
     line-height: 1.5;
 }
 
+:root {
+    --accent: #f84906;    /* laranja */
+    --accent-green: #ece70e; /* verde destaque */
+    --brown: #471616;    /* marrom CTA final */
+}
+
 /* =============== ESTRUTURA GERAL =============== */
 .section {
     padding: 70px 20px;
@@ -47,7 +53,7 @@ body {
         ),
         url('../img/imagem12.png') center/cover no-repeat;
     color: #ffffff;
-    padding: 30px 20px 60px;
+    padding: 50px 20px 80px; /* mais espaço superior/inferior */
     border-bottom-left-radius: 70px;
     border-bottom-right-radius: 70px;
     overflow: hidden;
@@ -66,6 +72,11 @@ body {
 .hero-right {
     flex: 1;
 }
+.hero-left { flex: 0.85; }
+.hero-right { flex: 1.15; }
+
+/* Centraliza o CTA do hero */
+.hero .btn-primary { display: block; margin: 24px auto 0; }
 
 .logo {
     max-width: 450px;
@@ -74,8 +85,8 @@ body {
 
 .hero-title {
     margin-top: 20px;
-    font-size: 32px;
-    font-weight: 800;
+    font-size: 42px;   /* título principal maior */
+    font-weight: 900;
 }
 
 .hero-subtitle {
@@ -120,8 +131,8 @@ body {
 }
 
 .btn-primary {
-    background: #ffffff;
-    color: #e31b0c;
+    background: var(--accent);
+    color: #ffffff;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
     margin-top: 24px;
 }
@@ -132,16 +143,24 @@ body {
 }
 
 .btn-outline {
-    border: 2px solid #e31b0c;
-    color: #e31b0c;
+    border: 2px solid var(--accent);
+    color: var(--accent);
     margin-top: 35px;
     background: #ffffff;
 }
 
 .btn-outline:hover {
-    background: #e31b0c;
+    background: var(--accent);
     color: #ffffff;
 }
+
+/* Botão marrom (CTA final e quem) */
+.btn-brown {
+    background: var(--brown);
+    color: #ffffff;
+    white-space: nowrap; /* manter em uma linha */
+}
+.btn-brown:hover { filter: brightness(1.05); }
 
 /* =============== HERO VÍDEO =============== */
 .video-wrapper {
@@ -150,6 +169,7 @@ body {
     overflow: hidden;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
     border: 6px solid rgba(255, 255, 255, 0.6); /* moldura branca translúcida */
+    margin: 8px 0 8px; /* respiro vertical */
 }
 
 .video-wrapper img {
@@ -182,14 +202,16 @@ body {
 .section-title {
     text-align: center;
     font-size: 24px;
-    font-weight: 800;
+    font-weight: 900;  /* mais bold */
     margin-bottom: 35px;
     color: #261309;
 }
 
-.section-title span {
-    color: #e31b0c;
-}
+.section-title span { color: var(--accent-green); }
+
+/* Destaques no texto do Hero */
+.hero-subtitle strong,
+.hero-small strong { color: var(--accent-green); }
 
 .section-title.left {
     text-align: left;
@@ -203,7 +225,8 @@ body {
 
 .cards {
     display: flex;
-    flex-wrap: wrap;
+    /* Mantém os 4 cards na mesma linha em telas largas */
+    flex-wrap: nowrap;
     justify-content: center;
     gap: 25px;
 }
@@ -219,16 +242,19 @@ body {
         to bottom,
         #FFFFFF 0,
         #FFFFFF var(--beige-start),
-        #FFECD2 var(--beige-start),
-        #FFECD2 100%
+        #fff0e8 var(--beige-start), /* faixa inferior mais alaranjada */
+        #fff0e8 100%
     );
     border-radius: 26px;
     padding: var(--card-top-pad) 26px 30px;   /* mais espaço em cima para o ícone */
-    max-width: 260px;
+    /* Ajusta largura para caber 4 cards com gaps dentro de 1100px */
+    flex: 1 1 245px;
+    max-width: 245px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     text-align: left;
     color: #441A0E;
     font-family: 'Montserrat', sans-serif;
+    overflow: hidden; /* evita quaisquer sobras */
 }
 
 
@@ -240,6 +266,9 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0 auto 10px;
+    /* Evita que detalhes do PNG ultrapassem o círculo */
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .card-icon img {
@@ -256,26 +285,34 @@ body {
     background: transparent;
 }
 
+/* Filtro para deixar o ícone ciano com tom alaranjado */
+.card-icon img.orange {
+    filter: hue-rotate(210deg) saturate(150%) brightness(1.05);
+}
+
 .card h3 {
-    font-size: 16px;
-    margin-bottom: 6px;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 8px;
 }
 
 .card p {
-    font-size: 13px;
+    font-size: 14px;
     color: #4a3628;
 }
 
 /* =============== SEÇÃO RESULTADO =============== */
-.resultado {
-    background: #fff0e6;
-}
+.resultado { background: #fff0e6; }
 
 .resultado-inner {
     display: flex;
-    gap: 40px;
+    gap: 28px;
     align-items: center;
     justify-content: space-between;
+    background: #ffffff;           /* integra texto+foto */
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: 0 12px 26px rgba(0,0,0,0.08);
 }
 
 .resultado-text {
@@ -302,8 +339,8 @@ body {
 
 .resultado-list li {
     margin-bottom: 5px;
-    color: #e31b0c;            /* ênfase em vermelho como no layout */
-    font-weight: 700;
+    color: var(--accent);      /* destaque em laranja */
+    font-weight: 800;
 }
 
 .resultado-list li::before {
@@ -329,11 +366,14 @@ body {
 }
 
 .quem .section-title {
-    display: inline-block;
-    background: #e31b0c;
+    display: block;                 /* permite centralizar com margin auto */
+    width: fit-content;             /* encolhe ao conteúdo */
+    margin: 0 auto 20px;            /* centraliza horizontalmente */
+    background: var(--accent);      /* faixa de destaque laranja */
     color: #ffffff;
     padding: 8px 16px;
     border-radius: 12px;
+    text-align: center;
 }
 
 .quem-grid {
@@ -364,8 +404,8 @@ body {
 }
 
 .quem-card h3 {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 22px;  /* nomes maiores */
+    font-weight: 800; /* mais grosso */
 }
 
 .quem-sub {
@@ -393,7 +433,7 @@ body {
 
 .atuacao .section-title {
     color: #0d2f4a;
-    background: #25e6d6;      /* selo ciano */
+    background: var(--accent); /* faixa de destaque laranja */
     display: inline-block;
     padding: 8px 16px;
     border-radius: 12px;
@@ -424,7 +464,7 @@ body {
 
 /* =============== VAGAS LIMITADAS =============== */
 .vagas {
-    background: #e31b0c; /* seção vermelha */
+    background: var(--accent); /* fundo laranja */
     color: #ffffff;
     text-align: center;
 }
@@ -436,6 +476,10 @@ body {
     padding: 8px 12px;
     border-radius: 10px;
 }
+
+/* Botão marrom no bloco final */
+.vagas .btn-primary { background: var(--brown); }
+.vagas .btn-primary:hover { filter: brightness(1.05); }
 
 .vagas-inner {
     max-width: 650px;
@@ -526,7 +570,7 @@ body {
 
     .hero {
         text-align: center;
-        padding-top: 25px;
+        padding-top: 35px;
         border-bottom-left-radius: 40px;
         border-bottom-right-radius: 40px;
     }
@@ -552,6 +596,7 @@ body {
 
     .cards {
         gap: 18px;
+        flex-wrap: wrap; /* no mobile, pode quebrar linha */
     }
 
     .card {
@@ -575,7 +620,7 @@ body {
     }
 
     .section-title {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .btn,
