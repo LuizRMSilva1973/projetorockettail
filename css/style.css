@@ -209,6 +209,12 @@ body {
 
 .section-title span { color: var(--accent-green); }
 
+/* Título da seção "O que você recebe" com destaque laranja na segunda linha */
+.recebe .section-title span {
+    color: var(--accent);
+    display: block; /* força quebra de linha como no layout */
+}
+
 /* Destaques no texto do Hero */
 .hero-subtitle strong,
 .hero-small strong { color: var(--accent-green); }
